@@ -5,52 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COUNTRY LEATHER by TOTAL FEST</title>
     <meta name="description" content="Catálogo de chamarras de piel premium">
-    <meta name="theme-color" content="#0a1929">
+    <meta name="theme-color" content="#1a1410">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Country Leather">
     <link rel="manifest" href="manifest.json">
 
     <style>
+        /* ============================================ */
+        /* 🎨 PALETA RANCHERA PREMIUM + FONDO MADERA    */
+        /* ============================================ */
         :root {
-            --fondo: #0a1929;
-            --tarjeta: #132f4c;
-            --azul: #1976d2;
-            --azul-claro: #64b5f6;
-            --morado: #8e24aa;
-            --verde: #4caf50;
-            --blanco: #ffffff;
-            --gris: #b0bec5;
+            --fondo: #1a1410;
+            --tarjeta: #2d1f15;
+            --tarjeta-hover: #3a2819;
             --dorado: #d4a843;
+            --dorado-claro: #e8c170;
+            --terracota: #a0522d;
+            --crema: #f5e6d3;
+            --crema-suave: #d4c4a8;
+            --azul-tf: #4a6fa5;
+            --verde-wa: #25d366;
+            --verde-wa-hover: #1da851;
+            --borde: rgba(212, 168, 67, 0.2);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--fondo);
-            color: var(--blanco);
+            color: var(--crema);
             min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* ============================================ */
+        /* 🪵 EFECTO MADERA CON BETAS (CSS PURO)        */
+        /* ============================================ */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -1;
+            background: 
+                linear-gradient(135deg, 
+                    #2a1d13 0%, 
+                    #1a1410 25%, 
+                    #241812 50%, 
+                    #1a1410 75%, 
+                    #2a1d13 100%);
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -1;
+            background:
+                repeating-linear-gradient(
+                    88deg,
+                    transparent 0px,
+                    transparent 18px,
+                    rgba(90, 60, 30, 0.15) 18px,
+                    rgba(90, 60, 30, 0.15) 19px,
+                    transparent 19px,
+                    transparent 42px
+                ),
+                repeating-linear-gradient(
+                    92deg,
+                    transparent 0px,
+                    transparent 35px,
+                    rgba(60, 40, 20, 0.2) 35px,
+                    rgba(60, 40, 20, 0.2) 37px,
+                    transparent 37px,
+                    transparent 80px
+                ),
+                repeating-linear-gradient(
+                    87deg,
+                    transparent 0px,
+                    transparent 60px,
+                    rgba(120, 80, 40, 0.08) 60px,
+                    rgba(120, 80, 40, 0.08) 62px,
+                    transparent 62px,
+                    transparent 120px
+                ),
+                radial-gradient(ellipse 120px 80px at 20% 30%, rgba(40, 25, 15, 0.4) 0%, transparent 70%),
+                radial-gradient(ellipse 150px 100px at 75% 65%, rgba(40, 25, 15, 0.35) 0%, transparent 70%),
+                radial-gradient(ellipse 100px 70px at 50% 85%, rgba(50, 30, 18, 0.3) 0%, transparent 70%),
+                radial-gradient(ellipse 80px 60px at 85% 15%, rgba(50, 30, 18, 0.25) 0%, transparent 70%),
+                radial-gradient(ellipse at 30% 20%, rgba(212, 168, 67, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(212, 168, 67, 0.03) 0%, transparent 50%);
         }
 
         /* HEADER */
         .header {
-            background: linear-gradient(135deg, var(--tarjeta), #1a1a2e);
+            background: linear-gradient(135deg, var(--tarjeta), #1f1610);
             padding: 25px 20px;
             text-align: center;
             border-bottom: 2px solid var(--dorado);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
         }
 
         .header h1 {
-            font-size: 24px;
+            font-size: 26px;
             color: var(--dorado);
             letter-spacing: 3px;
             margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .header .sub {
-            color: var(--gris);
+            color: var(--crema-suave);
             font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .header .linea {
+            width: 60px;
+            height: 2px;
+            background: var(--terracota);
+            margin: 10px auto;
         }
 
         /* FILTROS */
@@ -60,13 +135,14 @@
             padding: 15px;
             overflow-x: auto;
             background: var(--tarjeta);
+            border-bottom: 1px solid var(--borde);
         }
 
         .filtro-btn {
             padding: 8px 16px;
-            border: 1px solid var(--azul);
+            border: 1px solid var(--terracota);
             background: transparent;
-            color: var(--azul-claro);
+            color: var(--dorado-claro);
             border-radius: 20px;
             font-size: 13px;
             cursor: pointer;
@@ -75,8 +151,9 @@
         }
 
         .filtro-btn.activo {
-            background: var(--azul);
-            color: var(--blanco);
+            background: var(--terracota);
+            color: var(--crema);
+            border-color: var(--dorado);
         }
 
         /* GRID DE TARJETAS */
@@ -91,18 +168,24 @@
             background: var(--tarjeta);
             border-radius: 12px;
             overflow: hidden;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid var(--borde);
+            transition: transform 0.2s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-2px);
+            background: var(--tarjeta-hover);
         }
 
         .tarjeta-img {
             width: 100%;
             height: 180px;
-            background: #1a2a3a;
+            background: linear-gradient(135deg, #2a1d13, #1a1410);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 50px;
+            border-bottom: 1px solid var(--borde);
         }
 
         .tarjeta-info {
@@ -114,31 +197,35 @@
             font-weight: 700;
             color: var(--dorado);
             margin-bottom: 4px;
+            letter-spacing: 1px;
         }
 
         .tarjeta-cat {
             font-size: 11px;
-            color: var(--gris);
+            color: var(--terracota);
             margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .tarjeta-tallas {
             font-size: 10px;
-            color: var(--azul-claro);
+            color: var(--azul-tf);
             margin-bottom: 8px;
         }
 
         .tarjeta-precio {
             font-size: 18px;
             font-weight: 800;
-            color: var(--verde);
+            color: var(--dorado-claro);
         }
 
         .tarjeta-precio .mayoreo {
             font-size: 11px;
-            color: var(--gris);
+            color: var(--crema-suave);
             text-decoration: line-through;
             display: block;
+            font-weight: 400;
         }
 
         /* BOTÓN WHATSAPP */
@@ -146,7 +233,7 @@
             display: block;
             width: 100%;
             padding: 10px;
-            background: #25d366;
+            background: var(--verde-wa);
             color: white;
             border: none;
             border-radius: 8px;
@@ -156,14 +243,26 @@
             margin-top: 8px;
             text-decoration: none;
             text-align: center;
+            transition: background 0.3s;
+        }
+
+        .btn-wa:hover {
+            background: var(--verde-wa-hover);
         }
 
         /* FOOTER */
         .footer {
             text-align: center;
             padding: 20px;
-            color: var(--gris);
+            color: var(--crema-suave);
             font-size: 12px;
+            border-top: 1px solid var(--borde);
+            margin-top: 20px;
+        }
+
+        .footer .marca {
+            color: var(--dorado);
+            font-weight: 700;
         }
     </style>
 </head>
@@ -171,6 +270,7 @@
 
     <div class="header">
         <h1>🤠 COUNTRY LEATHER</h1>
+        <div class="linea"></div>
         <p class="sub">by TOTAL FEST · Chamarras de Piel Premium</p>
     </div>
 
@@ -178,7 +278,7 @@
     <div class="grid" id="grid"></div>
 
     <div class="footer">
-        COUNTRY LEATHER by TOTAL FEST © 2027<br>
+        <span class="marca">COUNTRY LEATHER</span> by TOTAL FEST © 2027<br>
         📲 Pedidos por WhatsApp
     </div>
 
