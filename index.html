@@ -13,7 +13,7 @@
 
     <style>
         /* ============================================ */
-        /* 🎨 PALETA RANCHERA PREMIUM + FONDO MADERA    */
+        /* 🎨 PALETA RANCHERA PREMIUM                   */
         /* ============================================ */
         :root {
             --fondo: #1a1410;
@@ -38,10 +38,11 @@
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
+            transition: background 0.5s ease;
         }
 
         /* ============================================ */
-        /* 🪵 EFECTO MADERA CON BETAS (CSS PURO)        */
+        /* 🪵 FONDO MADERA BASE (TODOS)                 */
         /* ============================================ */
         body::before {
             content: '';
@@ -63,39 +64,51 @@
             top: 0; left: 0; right: 0; bottom: 0;
             z-index: -1;
             background:
-                repeating-linear-gradient(
-                    88deg,
-                    transparent 0px,
-                    transparent 18px,
-                    rgba(90, 60, 30, 0.15) 18px,
-                    rgba(90, 60, 30, 0.15) 19px,
-                    transparent 19px,
-                    transparent 42px
-                ),
-                repeating-linear-gradient(
-                    92deg,
-                    transparent 0px,
-                    transparent 35px,
-                    rgba(60, 40, 20, 0.2) 35px,
-                    rgba(60, 40, 20, 0.2) 37px,
-                    transparent 37px,
-                    transparent 80px
-                ),
-                repeating-linear-gradient(
-                    87deg,
-                    transparent 0px,
-                    transparent 60px,
-                    rgba(120, 80, 40, 0.08) 60px,
-                    rgba(120, 80, 40, 0.08) 62px,
-                    transparent 62px,
-                    transparent 120px
-                ),
+                repeating-linear-gradient(88deg, transparent 0px, transparent 18px, rgba(90, 60, 30, 0.15) 18px, rgba(90, 60, 30, 0.15) 19px, transparent 19px, transparent 42px),
+                repeating-linear-gradient(92deg, transparent 0px, transparent 35px, rgba(60, 40, 20, 0.2) 35px, rgba(60, 40, 20, 0.2) 37px, transparent 37px, transparent 80px),
+                repeating-linear-gradient(87deg, transparent 0px, transparent 60px, rgba(120, 80, 40, 0.08) 60px, rgba(120, 80, 40, 0.08) 62px, transparent 62px, transparent 120px),
                 radial-gradient(ellipse 120px 80px at 20% 30%, rgba(40, 25, 15, 0.4) 0%, transparent 70%),
                 radial-gradient(ellipse 150px 100px at 75% 65%, rgba(40, 25, 15, 0.35) 0%, transparent 70%),
                 radial-gradient(ellipse 100px 70px at 50% 85%, rgba(50, 30, 18, 0.3) 0%, transparent 70%),
                 radial-gradient(ellipse 80px 60px at 85% 15%, rgba(50, 30, 18, 0.25) 0%, transparent 70%),
                 radial-gradient(ellipse at 30% 20%, rgba(212, 168, 67, 0.05) 0%, transparent 50%),
                 radial-gradient(ellipse at 70% 80%, rgba(212, 168, 67, 0.03) 0%, transparent 50%);
+            transition: opacity 0.5s ease;
+        }
+
+        /* ============================================ */
+        /* 🎨 FONDOS TENUES POR CATEGORÍA               */
+        /* ============================================ */
+        body.cat-caballeros::after {
+            background:
+                repeating-linear-gradient(88deg, transparent 0px, transparent 18px, rgba(90, 60, 30, 0.25) 18px, rgba(90, 60, 30, 0.25) 19px, transparent 19px, transparent 42px),
+                repeating-linear-gradient(92deg, transparent 0px, transparent 35px, rgba(60, 40, 20, 0.35) 35px, rgba(60, 40, 20, 0.35) 37px, transparent 37px, transparent 80px),
+                radial-gradient(ellipse 120px 80px at 20% 30%, rgba(40, 25, 15, 0.5) 0%, transparent 70%),
+                radial-gradient(ellipse 150px 100px at 75% 65%, rgba(40, 25, 15, 0.45) 0%, transparent 70%);
+        }
+
+        body.cat-damas::after {
+            background:
+                repeating-linear-gradient(88deg, transparent 0px, transparent 18px, rgba(120, 80, 40, 0.1) 18px, rgba(120, 80, 40, 0.1) 19px, transparent 19px, transparent 42px),
+                repeating-linear-gradient(92deg, transparent 0px, transparent 35px, rgba(100, 70, 40, 0.15) 35px, rgba(100, 70, 40, 0.15) 37px, transparent 37px, transparent 80px),
+                radial-gradient(ellipse 120px 80px at 20% 30%, rgba(80, 50, 30, 0.2) 0%, transparent 70%),
+                radial-gradient(ellipse 150px 100px at 75% 65%, rgba(80, 50, 30, 0.15) 0%, transparent 70%),
+                radial-gradient(ellipse at 30% 20%, rgba(212, 168, 67, 0.08) 0%, transparent 50%);
+        }
+
+        body.cat-ninos::after {
+            background:
+                repeating-linear-gradient(88deg, transparent 0px, transparent 18px, rgba(140, 100, 60, 0.08) 18px, rgba(140, 100, 60, 0.08) 19px, transparent 19px, transparent 42px),
+                repeating-linear-gradient(92deg, transparent 0px, transparent 35px, rgba(120, 80, 50, 0.12) 35px, rgba(120, 80, 50, 0.12) 37px, transparent 37px, transparent 80px),
+                radial-gradient(ellipse 120px 80px at 20% 30%, rgba(100, 70, 40, 0.15) 0%, transparent 70%),
+                radial-gradient(ellipse at 50% 50%, rgba(212, 168, 67, 0.06) 0%, transparent 50%);
+        }
+
+        body.cat-ninas::after {
+            background:
+                repeating-linear-gradient(88deg, transparent 0px, transparent 18px, rgba(160, 120, 80, 0.05) 18px, rgba(160, 120, 80, 0.05) 19px, transparent 19px, transparent 42px),
+                radial-gradient(ellipse 120px 80px at 20% 30%, rgba(120, 90, 60, 0.1) 0%, transparent 70%),
+                radial-gradient(ellipse at 50% 50%, rgba(212, 168, 67, 0.1) 0%, transparent 50%);
         }
 
         /* HEADER */
@@ -356,11 +369,19 @@
         }
 
         // ============================================
-        // 🔍 FILTRAR
+        // 🔍 FILTRAR + CAMBIAR FONDO
         // ============================================
         function filtrar(cat, btn) {
             document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('activo'));
             btn.classList.add('activo');
+            
+            // Cambiar clase del body para el fondo
+            document.body.className = '';
+            if (cat === 'Caballeros') document.body.classList.add('cat-caballeros');
+            else if (cat === 'Damas') document.body.classList.add('cat-damas');
+            else if (cat === 'Niños') document.body.classList.add('cat-ninos');
+            else if (cat === 'Niñas') document.body.classList.add('cat-ninas');
+            
             const lista = cat === 'Todos' ? CATALOGO : CATALOGO.filter(p => p.categoria === cat);
             renderizar(lista);
         }
