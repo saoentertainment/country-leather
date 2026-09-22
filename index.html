@@ -12,9 +12,6 @@
     <link rel="manifest" href="manifest.json">
 
     <style>
-        /* ============================================ */
-        /* 🎨 PALETA RANCHERA PREMIUM                   */
-        /* ============================================ */
         :root {
             --fondo: #1a1410;
             --tarjeta: #2d1f15;
@@ -41,21 +38,12 @@
             transition: background 0.5s ease;
         }
 
-        /* ============================================ */
-        /* 🪵 FONDO MADERA BASE (TODOS)                 */
-        /* ============================================ */
         body::before {
             content: '';
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
             z-index: -1;
-            background: 
-                linear-gradient(135deg, 
-                    #2a1d13 0%, 
-                    #1a1410 25%, 
-                    #241812 50%, 
-                    #1a1410 75%, 
-                    #2a1d13 100%);
+            background: linear-gradient(135deg, #2a1d13 0%, #1a1410 25%, #241812 50%, #1a1410 75%, #2a1d13 100%);
             transition: background 0.5s ease;
         }
 
@@ -77,21 +65,9 @@
             transition: opacity 0.5s ease;
         }
 
-        /* ============================================ */
-        /* 🎨 FONDOS NOTORIOS POR CATEGORÍA             */
-        /* ============================================ */
-        
-        /* CABALLEROS: Madera oscura + tinte terracota (rojizo) */
         body.cat-caballeros::before {
-            background: 
-                linear-gradient(135deg, 
-                    #3a2015 0%, 
-                    #2a1510 25%, 
-                    #351a12 50%, 
-                    #2a1510 75%, 
-                    #3a2015 100%);
+            background: linear-gradient(135deg, #3a2015 0%, #2a1510 25%, #351a12 50%, #2a1510 75%, #3a2015 100%);
         }
-        
         body.cat-caballeros::after {
             background:
                 repeating-linear-gradient(88deg, transparent 0px, transparent 18px, rgba(160, 82, 45, 0.25) 18px, rgba(160, 82, 45, 0.25) 19px, transparent 19px, transparent 42px),
@@ -103,17 +79,9 @@
                 radial-gradient(ellipse at 30% 20%, rgba(212, 168, 67, 0.08) 0%, transparent 50%);
         }
 
-        /* DAMAS: Madera clara + tinte dorado rosado */
         body.cat-damas::before {
-            background: 
-                linear-gradient(135deg, 
-                    #2d2018 0%, 
-                    #1f1612 25%, 
-                    #281c15 50%, 
-                    #1f1612 75%, 
-                    #2d2018 100%);
+            background: linear-gradient(135deg, #2d2018 0%, #1f1612 25%, #281c15 50%, #1f1612 75%, #2d2018 100%);
         }
-        
         body.cat-damas::after {
             background:
                 repeating-linear-gradient(88deg, transparent 0px, transparent 18px, rgba(212, 168, 67, 0.18) 18px, rgba(212, 168, 67, 0.18) 19px, transparent 19px, transparent 42px),
@@ -126,17 +94,9 @@
                 radial-gradient(ellipse at 70% 80%, rgba(212, 168, 67, 0.1) 0%, transparent 50%);
         }
 
-        /* NIÑOS: Madera media + tinte ámbar (anaranjado) */
         body.cat-ninos::before {
-            background: 
-                linear-gradient(135deg, 
-                    #2a1e14 0%, 
-                    #1d1510 25%, 
-                    #251a13 50%, 
-                    #1d1510 75%, 
-                    #2a1e14 100%);
+            background: linear-gradient(135deg, #2a1e14 0%, #1d1510 25%, #251a13 50%, #1d1510 75%, #2a1e14 100%);
         }
-        
         body.cat-ninos::after {
             background:
                 repeating-linear-gradient(88deg, transparent 0px, transparent 18px, rgba(200, 120, 60, 0.2) 18px, rgba(200, 120, 60, 0.2) 19px, transparent 19px, transparent 42px),
@@ -148,17 +108,9 @@
                 radial-gradient(ellipse at 30% 20%, rgba(212, 168, 67, 0.12) 0%, transparent 50%);
         }
 
-        /* NIÑAS: Madera muy clara + tinte crema dorado */
         body.cat-ninas::before {
-            background: 
-                linear-gradient(135deg, 
-                    #2f2419 0%, 
-                    #221a14 25%, 
-                    #2a1f17 50%, 
-                    #221a14 75%, 
-                    #2f2419 100%);
+            background: linear-gradient(135deg, #2f2419 0%, #221a14 25%, #2a1f17 50%, #221a14 75%, #2f2419 100%);
         }
-        
         body.cat-ninas::after {
             background:
                 repeating-linear-gradient(88deg, transparent 0px, transparent 18px, rgba(220, 180, 120, 0.15) 18px, rgba(220, 180, 120, 0.15) 19px, transparent 19px, transparent 42px),
@@ -168,7 +120,6 @@
                 radial-gradient(ellipse at 50% 50%, rgba(232, 193, 112, 0.15) 0%, transparent 50%);
         }
 
-        /* HEADER */
         .header {
             background: linear-gradient(135deg, var(--tarjeta), #1f1610);
             padding: 25px 20px;
@@ -198,7 +149,6 @@
             margin: 10px auto;
         }
 
-        /* FILTROS */
         .filtros {
             display: flex;
             gap: 8px;
@@ -206,6 +156,9 @@
             overflow-x: auto;
             background: var(--tarjeta);
             border-bottom: 1px solid var(--borde);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .filtro-btn {
@@ -226,7 +179,6 @@
             border-color: var(--dorado);
         }
 
-        /* GRID DE TARJETAS */
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -258,9 +210,7 @@
             border-bottom: 1px solid var(--borde);
         }
 
-        .tarjeta-info {
-            padding: 12px;
-        }
+        .tarjeta-info { padding: 12px; }
 
         .tarjeta-nombre {
             font-size: 14px;
@@ -298,7 +248,6 @@
             font-weight: 400;
         }
 
-        /* BOTÓN WHATSAPP */
         .btn-wa {
             display: block;
             width: 100%;
@@ -316,11 +265,8 @@
             transition: background 0.3s;
         }
 
-        .btn-wa:hover {
-            background: var(--verde-wa-hover);
-        }
+        .btn-wa:hover { background: var(--verde-wa-hover); }
 
-        /* FOOTER */
         .footer {
             text-align: center;
             padding: 20px;
@@ -334,6 +280,15 @@
             color: var(--dorado);
             font-weight: 700;
         }
+
+        /* Contador de resultados */
+        .contador {
+            text-align: center;
+            padding: 10px;
+            color: var(--crema-suave);
+            font-size: 12px;
+            background: rgba(0,0,0,0.3);
+        }
     </style>
 </head>
 <body>
@@ -345,6 +300,7 @@
     </div>
 
     <div class="filtros" id="filtros"></div>
+    <div class="contador" id="contador"></div>
     <div class="grid" id="grid"></div>
 
     <div class="footer">
@@ -354,43 +310,70 @@
 
     <script>
         // ============================================
-        // 🧠 ARRAY MAESTRO DE DATOS
+        // 🧠 ARRAY MAESTRO DE DATOS - CATÁLOGO COMPLETO
         // ============================================
         const WHATSAPP = '527207130330';
 
         const CATALOGO = [
-            {
-                modelo: 'PILOTO',
-                categoria: 'Caballeros',
-                tallas: 'CH · M · G · XG · 2XL',
-                mayoreo: 1900,
-                publico: 2700,
-                emoji: '🧥'
-            },
-            {
-                modelo: 'JENIFER',
-                categoria: 'Damas',
-                tallas: 'CH · M · G · XG · 2XL · 3XL',
-                mayoreo: 1600,
-                publico: 2300,
-                emoji: '🧥'
-            },
-            {
-                modelo: 'AVIADOR JR',
-                categoria: 'Niños',
-                tallas: '08 · 10 · 12 · 14 · 16',
-                mayoreo: 1300,
-                publico: 1900,
-                emoji: '👦'
-            },
-            {
-                modelo: 'ZOE',
-                categoria: 'Niñas',
-                tallas: '08 · 10 · 12 · 14 · 16',
-                mayoreo: 1300,
-                publico: 1900,
-                emoji: '👧'
-            }
+            // ========== CABALLEROS ==========
+            { modelo: 'ALASKA', categoria: 'Caballeros', tallas: 'CH · M · G · XG · 2XL · 3XL', mayoreo: 3100, publico: 4500, emoji: '🧥' },
+            { modelo: 'KENTUCKY', categoria: 'Caballeros', tallas: 'CH · M · G · XG · 2XL · 3XL', mayoreo: 2800, publico: 4200, emoji: '🧥' },
+            { modelo: 'LARGA HIDRO', categoria: 'Caballeros', tallas: 'CH · M · G · XG · 2XL · 3XL', mayoreo: 2950, publico: 4350, emoji: '🧥' },
+            { modelo: 'VAQUERA CORTA HIDRO', categoria: 'Caballeros', tallas: 'CH · M · G · XG · 2XL · 3XL', mayoreo: 2850, publico: 4250, emoji: '🧥' },
+            { modelo: 'PILOTO', categoria: 'Caballeros', tallas: 'CH · M · G · XG · 2XL · 3XL', mayoreo: 1900, publico: 2700, emoji: '🧥' },
+            { modelo: 'TONIS', categoria: 'Caballeros', tallas: 'CH · M · G · XG · 2XL · 3XL', mayoreo: 2500, publico: 3600, emoji: '🧥' },
+            { modelo: 'ROMAN', categoria: 'Caballeros', tallas: 'CH · M · G · XG · 2XL · 3XL', mayoreo: 1450, publico: 2250, emoji: '🧥' },
+            { modelo: 'MONTANA', categoria: 'Caballeros', tallas: 'CH · M · G · XG · 2XL · 3XL', mayoreo: 1450, publico: 2250, emoji: '🧥' },
+            { modelo: 'LEVIS', categoria: 'Caballeros', tallas: 'CH · M · G · XG · 2XL · 3XL', mayoreo: 1450, publico: 2250, emoji: '🧥' },
+            { modelo: 'CHALECO VAQUERO', categoria: 'Caballeros', tallas: 'CH · M · G · XG · 2XL · 3XL', mayoreo: 1000, publico: 1600, emoji: '🧥' },
+            { modelo: 'VAQUERA CORTA', categoria: 'Caballeros', tallas: 'CH · M · G · XG · 2XL · 3XL', mayoreo: 1800, publico: 2600, emoji: '🧥' },
+            { modelo: 'VAQUERA LARGA', categoria: 'Caballeros', tallas: 'CH · M · G · XG · 2XL · 3XL', mayoreo: 2200, publico: 3300, emoji: '🧥' },
+            { modelo: 'MIXTA CORTA', categoria: 'Caballeros', tallas: 'CH · M · G · XG · 2XL · 3XL', mayoreo: 1900, publico: 2700, emoji: '🧥' },
+            { modelo: 'MIXTA LARGA', categoria: 'Caballeros', tallas: 'CH · M · G · XG · 2XL · 3XL', mayoreo: 2300, publico: 3400, emoji: '🧥' },
+            { modelo: 'BOMBER', categoria: 'Caballeros', tallas: 'CH · M · G · XG · 2XL · 3XL', mayoreo: 1700, publico: 2500, emoji: '🧥' },
+            { modelo: 'AVIADOR', categoria: 'Caballeros', tallas: 'CH · M · G · XG · 2XL · 3XL', mayoreo: 2100, publico: 3200, emoji: '🧥' },
+            { modelo: 'MOTO', categoria: 'Caballeros', tallas: 'CH · M · G · XG · 2XL · 3XL', mayoreo: 2000, publico: 3100, emoji: '🧥' },
+            { modelo: 'URBAN', categoria: 'Caballeros', tallas: 'CH · M · G · XG · 2XL · 3XL', mayoreo: 1850, publico: 2650, emoji: '🧥' },
+            { modelo: 'CLASSIC', categoria: 'Caballeros', tallas: 'CH · M · G · XG · 2XL · 3XL', mayoreo: 1750, publico: 2550, emoji: '🧥' },
+            { modelo: 'RANCHERA', categoria: 'Caballeros', tallas: 'CH · M · G · XG · 2XL · 3XL', mayoreo: 1950, publico: 2750, emoji: '🧥' },
+
+            // ========== DAMAS ==========
+            { modelo: 'KENTUCKY PUNTAS', categoria: 'Damas', tallas: 'CH · M · G · XG · 2XL · 3XL · 4XL', mayoreo: 3100, publico: 4500, emoji: '🧥' },
+            { modelo: 'JENIFER', categoria: 'Damas', tallas: 'CH · M · G · XG · 2XL · 3XL · 4XL', mayoreo: 1600, publico: 2400, emoji: '🧥' },
+            { modelo: 'ALICIA', categoria: 'Damas', tallas: 'CH · M · G · XG · 2XL · 3XL · 4XL', mayoreo: 1000, publico: 1600, emoji: '🧥' },
+            { modelo: 'VAQUERA CORTA', categoria: 'Damas', tallas: 'CH · M · G · XG · 2XL · 3XL · 4XL', mayoreo: 1800, publico: 2600, emoji: '🧥' },
+            { modelo: 'VAQUERA LARGA', categoria: 'Damas', tallas: 'CH · M · G · XG · 2XL · 3XL · 4XL', mayoreo: 2200, publico: 3300, emoji: '🧥' },
+            { modelo: 'MIXTA CORTA', categoria: 'Damas', tallas: 'CH · M · G · XG · 2XL · 3XL · 4XL', mayoreo: 1900, publico: 2700, emoji: '🧥' },
+            { modelo: 'MIXTA LARGA', categoria: 'Damas', tallas: 'CH · M · G · XG · 2XL · 3XL · 4XL', mayoreo: 2300, publico: 3400, emoji: '🧥' },
+            { modelo: 'BOMBER', categoria: 'Damas', tallas: 'CH · M · G · XG · 2XL · 3XL · 4XL', mayoreo: 1700, publico: 2500, emoji: '🧥' },
+            { modelo: 'AVIADORA', categoria: 'Damas', tallas: 'CH · M · G · XG · 2XL · 3XL · 4XL', mayoreo: 2100, publico: 3200, emoji: '🧥' },
+            { modelo: 'MOTO', categoria: 'Damas', tallas: 'CH · M · G · XG · 2XL · 3XL · 4XL', mayoreo: 2000, publico: 3100, emoji: '🧥' },
+            { modelo: 'URBAN', categoria: 'Damas', tallas: 'CH · M · G · XG · 2XL · 3XL · 4XL', mayoreo: 1850, publico: 2650, emoji: '🧥' },
+            { modelo: 'CLASSIC', categoria: 'Damas', tallas: 'CH · M · G · XG · 2XL · 3XL · 4XL', mayoreo: 1750, publico: 2550, emoji: '🧥' },
+            { modelo: 'RANCHERA', categoria: 'Damas', tallas: 'CH · M · G · XG · 2XL · 3XL · 4XL', mayoreo: 1950, publico: 2750, emoji: '🧥' },
+            { modelo: 'CHALECO VAQUERO', categoria: 'Damas', tallas: 'CH · M · G · XG · 2XL · 3XL · 4XL', mayoreo: 1000, publico: 1600, emoji: '🧥' },
+            { modelo: 'CROPPED', categoria: 'Damas', tallas: 'CH · M · G · XG · 2XL · 3XL · 4XL', mayoreo: 1550, publico: 2350, emoji: '🧥' },
+            { modelo: 'OVERSIZE', categoria: 'Damas', tallas: 'CH · M · G · XG · 2XL · 3XL · 4XL', mayoreo: 2050, publico: 3150, emoji: '🧥' },
+
+            // ========== NIÑOS ==========
+            { modelo: 'AVIADOR JR', categoria: 'Niños', tallas: '08 · 10 · 12 · 14 · 16', mayoreo: 1300, publico: 1900, emoji: '👦' },
+            { modelo: 'VAQUERA JR', categoria: 'Niños', tallas: '08 · 10 · 12 · 14 · 16', mayoreo: 1300, publico: 1900, emoji: '👦' },
+            { modelo: 'MOTO JR', categoria: 'Niños', tallas: '08 · 10 · 12 · 14 · 16', mayoreo: 1300, publico: 1900, emoji: '👦' },
+            { modelo: 'BOMBER JR', categoria: 'Niños', tallas: '08 · 10 · 12 · 14 · 16', mayoreo: 1300, publico: 1900, emoji: '👦' },
+            { modelo: 'MIXTA JR', categoria: 'Niños', tallas: '08 · 10 · 12 · 14 · 16', mayoreo: 1300, publico: 1900, emoji: '👦' },
+            { modelo: 'RANCHERA JR', categoria: 'Niños', tallas: '08 · 10 · 12 · 14 · 16', mayoreo: 1300, publico: 1900, emoji: '👦' },
+            { modelo: 'URBAN JR', categoria: 'Niños', tallas: '08 · 10 · 12 · 14 · 16', mayoreo: 1300, publico: 1900, emoji: '👦' },
+            { modelo: 'CHALECO JR', categoria: 'Niños', tallas: '08 · 10 · 12 · 14 · 16', mayoreo: 1300, publico: 1900, emoji: '👦' },
+
+            // ========== NIÑAS ==========
+            { modelo: 'ZOE', categoria: 'Niñas', tallas: '08 · 10 · 12 · 14 · 16', mayoreo: 1300, publico: 1900, emoji: '👧' },
+            { modelo: 'VAQUERA JR', categoria: 'Niñas', tallas: '08 · 10 · 12 · 14 · 16', mayoreo: 1300, publico: 1900, emoji: '👧' },
+            { modelo: 'MOTO JR', categoria: 'Niñas', tallas: '08 · 10 · 12 · 14 · 16', mayoreo: 1300, publico: 1900, emoji: '👧' },
+            { modelo: 'BOMBER JR', categoria: 'Niñas', tallas: '08 · 10 · 12 · 14 · 16', mayoreo: 1300, publico: 1900, emoji: '👧' },
+            { modelo: 'MIXTA JR', categoria: 'Niñas', tallas: '08 · 10 · 12 · 14 · 16', mayoreo: 1300, publico: 1900, emoji: '👧' },
+            { modelo: 'RANCHERA JR', categoria: 'Niñas', tallas: '08 · 10 · 12 · 14 · 16', mayoreo: 1300, publico: 1900, emoji: '👧' },
+            { modelo: 'URBAN JR', categoria: 'Niñas', tallas: '08 · 10 · 12 · 14 · 16', mayoreo: 1300, publico: 1900, emoji: '👧' },
+            { modelo: 'CHALECO JR', categoria: 'Niñas', tallas: '08 · 10 · 12 · 14 · 16', mayoreo: 1300, publico: 1900, emoji: '👧' }
         ];
 
         // ============================================
@@ -417,12 +400,14 @@
                             $${p.publico.toLocaleString()} MXN
                             <span class="mayoreo">Mayoreo: $${p.mayoreo.toLocaleString()}</span>
                         </div>
-                        <a class="btn-wa" href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hola! Me interesa la chamarra ' + p.modelo + ' ($' + p.publico + '). ¿Tienen disponible?')}" target="_blank">
+                        <a class="btn-wa" href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Hola! Me interesa la chamarra ' + p.modelo + ' (' + p.categoria + ') - $' + p.publico.toLocaleString() + ' MXN. ¿Tienen disponible?')}" target="_blank">
                             📲 Pedir por WhatsApp
                         </a>
                     </div>
                 </div>
             `).join('');
+            
+            document.getElementById('contador').textContent = `Mostrando ${lista.length} de ${CATALOGO.length} modelos`;
         }
 
         // ============================================
@@ -432,7 +417,6 @@
             document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('activo'));
             btn.classList.add('activo');
             
-            // Cambiar clase del body para el fondo
             document.body.className = '';
             if (cat === 'Caballeros') document.body.classList.add('cat-caballeros');
             else if (cat === 'Damas') document.body.classList.add('cat-damas');
